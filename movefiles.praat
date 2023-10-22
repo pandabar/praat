@@ -1,7 +1,7 @@
 # Move files from one folder to another
 #Pretty much the simplest script ever
 
-Directories
+# Directories
 source_directory$ = "/home/fernanda/afolder/extracted"
 out_directory$ = "/home/fernanda/afolder/extract"
 # String list
