@@ -1,4 +1,6 @@
 # Open grid with values
+# "grid.txt" is a txt, space-separated file with F1, F2, and bandwidths in Hz. There is also
+# a final column with the stim number (1 is /o/, 8 is lowback unrounded, 57 is /e/, 64 is a cursed low front
 tb=Read Table from whitespace-separated file: "grid.txt" # path to the grid file goes here
 
 # Start looping through the Table rows to get values
