@@ -6,7 +6,7 @@
 sound_directory$ = "/home/fernanda/afolder"
 
 #Creates table
-table_ID = Create Table with column names: "data", 0, "vowel F1 F2"
+table_ID = Create Table with column names: "data", 0, "vowel F1 F2 B1 B2"
 
 #Opening files
 strings = Create Strings as file list: "list", sound_directory$ + "/*.wav"
@@ -21,8 +21,10 @@ for ifile to numberOfFiles
 formant_ID = To Formant (burg): 0.0, 5, 5500, 0.025, 50
 
 selectObject: formant_ID
-f1 = Get value at time: 1, 0.05, "Hertz", "Linear"
-f2 = Get value at time: 2, 0.05, "Hertz", "Linear"
+f1 = Get value at time: 1, 0.5, "Hertz", "Linear"
+f2 = Get value at time: 2, 0.5, "Hertz", "Linear"
+b1 = Get bandwidth at time: 1, 0.5, "Hertz", "Linear"
+b2 = Get bandwidth at time: 2, 0.5, "Hertz", "Linear"
 
 #Filling out the table with corresponding values
 selectObject: table_ID
@@ -30,6 +32,8 @@ Append row
 Set string value: ifile, "vowel", fileName$
 Set numeric value: ifile, "F1", f1
 Set numeric value: ifile, "F2", f2
+Set numeric value: ifile, "B1", b1
+Set numeric value: ifile, "B2", b2
 endfor
 
 #Saving table as file (it will land on the same folder). 
